@@ -282,7 +282,7 @@
           <h2>The Security Ecosystem</h2>
           <p class="subtitle-desc">Integrating Specialized Technologies under One Command</p>
         </div>
-        <div class="grid-4col">
+        <div class="grid-3col">
           <div class="glass-card alliance-card">
             <h4 class="alliance-name">Suricata / Snort</h4>
             <div class="metaphor-badge">Network Defense</div>
@@ -295,12 +295,6 @@
             <p>Scans files and memory, identifying and classifying malicious binary files using custom, rule-based
               matching.</p>
           </div>
-          <div class="glass-card alliance-card">
-            <h4 class="alliance-name">Velociraptor</h4>
-            <div class="metaphor-badge">Digital Forensics</div>
-            <p>Performs deep endpoint investigation, reconstructing events and tracking down system compromises across
-              host groups.</p>
-          </div>
           <div class="glass-card alliance-card highlight-alliance">
             <h4 class="alliance-name">Wazuh</h4>
             <div class="metaphor-badge accent-bg">Central Orchestration</div>
@@ -309,8 +303,7 @@
           </div>
         </div>
         <aside class="notes">
-          Explain the integrations: Suricata/Snort provide network inspection, YARA handles file scanning, and
-          Velociraptor handles forensic investigation. Wazuh links them together.
+          Explain the integrations: Suricata/Snort provide network inspection, YARA handles file scanning. Wazuh acts as the central correlation hub linking them together.
         </aside>
       </section>
 
@@ -365,23 +358,8 @@
 
           <div class="flow-arrow">&#10142;</div>
 
-          <div class="flow-node">
-            <div class="node-title text-orange">4. Forensic Triage</div>
-            <div class="node-icon">
-              <!-- SVG Magnifying Glass -->
-              <svg viewBox="0 0 24 24" class="svg-icon">
-                <path
-                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
-                  fill="currentColor" />
-              </svg>
-            </div>
-            <p>Velociraptor runs forensic queries if needed</p>
-          </div>
-
-          <div class="flow-arrow">&#10142;</div>
-
           <div class="flow-node final-node">
-            <div class="node-title">5. SOC Remediation</div>
+            <div class="node-title">4. SOC Remediation</div>
             <div class="node-icon">
               <!-- SVG Group -->
               <svg viewBox="0 0 24 24" class="svg-icon">
@@ -394,8 +372,7 @@
           </div>
         </div>
         <aside class="notes">
-          Walk the audience through the standard operational flow of an alert: from generation, to correlation, triage,
-          and remediation by the SOC team.
+          Walk the audience through the standard operational flow of an alert: from generation, to correlation, and remediation by the SOC team.
         </aside>
       </section>
 
@@ -450,8 +427,10 @@
           integrating with them, rather than replacing them.
         </aside>
       </section>
-      <!-- Slide 9: Demonstration Plan -->
+      <!-- Slide 9: Demonstration Plan (vertical stack) -->
       <section>
+        <!-- Original Demonstration Plan Slide -->
+        <section>
         <div class="slide-header">
           <h2>Demonstration Plan</h2>
           <p class="subtitle-desc">See the Wazuh Security Stack in action</p>
@@ -491,20 +470,270 @@
             </div>
           </div>
 
-          <div class="glass-card" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
-            <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 26px; height: 26px; font-size: 0.75em;">5</div>
-            <div>
-              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">Endpoint Investigation</h4>
-              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate Velociraptor investigating suspicious activity on an endpoint.</p>
-            </div>
-          </div>
-
         </div>
         
         <aside class="notes">
           Introduce the live demonstration segment. Briefly mention that these 5 use-cases cover the most common real-world threats that companies face.
         </aside>
       </section>
+
+<!-- 9.0: Health Check -->
+        <section>
+          <div class="slide-header">
+            <h2>Process 1: Health Check</h2>
+            <p class="subtitle-desc">Verify everything is ready before running the demo</p>
+          </div>
+
+          <div class="grid-2col" style="gap: 20px; margin-top: 0.5em;">
+            <div class="glass-card" style="padding: 20px;">
+              <h4 style="margin-bottom: 0.5em; font-size: 0.85em;">Linux Endpoint</h4>
+              <div
+                style="background: rgba(0,0,0,0.02); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.6em; line-height: 2;">
+                <div>sudo systemctl status wazuh-agent</div>
+                <div style="color: var(--primary-orange);">sudo systemctl restart wazuh-agent</div>
+              </div>
+            </div>
+            <div class="glass-card" style="padding: 20px;">
+              <h4 style="margin-bottom: 0.5em; font-size: 0.85em;">macOS Endpoint</h4>
+              <div
+                style="background: rgba(0,0,0,0.02); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 0.6em; line-height: 2;">
+                <div>sudo launchctl list | grep wazuh</div>
+                <div style="color: var(--primary-orange);">sudo /Library/Ossec/bin/wazuh-control status</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card active-border" style="padding: 15px 20px; margin-top: 0.8em;">
+            <h4 style="font-size: 0.75em; margin-bottom: 0.3em;">Dashboard Verification</h4>
+            <ul style="font-size: 0.6em; line-height: 1.8; margin: 0.3em 0; padding-left: 1.2em;">
+              <li>Agent is visible in the dashboard</li>
+              <li>Recent events are present</li>
+              <li>Hostname matches the demo endpoint</li>
+              <li>No major ingestion issues visible</li>
+            </ul>
+            <p style="font-size: 0.55em; margin-top: 0.3em;">
+              <strong>Troubleshoot:</strong> If endpoint does not appear, restart agent &rarr; refresh dashboard &rarr;
+              search by hostname.
+            </p>
+          </div>
+
+          <aside class="notes">
+            Do this quietly before the audience joins or during the first minute. Verify the agent is active, the
+            dashboard shows recent events, and the hostname matches. If the endpoint does not appear, restart the agent
+            first, then refresh the dashboard and search by hostname again.
+          </aside>
+        </section>
+
+        <!-- 9.1: Run All Simulations -->
+        <section>
+          <div class="slide-header">
+            <h2>Running the Demo</h2>
+            <p class="subtitle-desc">One script triggers all attack simulations automatically</p>
+          </div>
+
+          <div class="glass-card active-border" style="padding: 24px; margin-top: 0.5em; text-align: center;">
+            <h4 style="font-size: 0.85em; margin-bottom: 0.5em;">Execute from the test machine</h4>
+            <div style="background: rgba(0,0,0,0.04); border-radius: 10px; padding: 16px; font-family: monospace; font-size: 0.75em; letter-spacing: 0.02em; display: inline-block;">
+              ./run_attacks.sh -t &lt;target-ip&gt; -u &lt;target-user&gt;
+            </div>
+            <p style="font-size: 0.55em; color: var(--text-muted); margin-top: 0.6em;">Requires SSH access to the target endpoint, nmap and Hydra installed on the test machine.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 0.8em; width: 90%; margin-left: auto; margin-right: auto;">
+            <div class="glass-card" style="padding: 10px 18px; display: flex; align-items: center; gap: 16px;">
+              <div class="step-num" style="position: static; flex-shrink: 0; width: 22px; height: 22px; font-size: 0.6em;">1</div>
+              <div><strong style="font-size: 0.65em;">FIM Simulation</strong> <span style="font-size: 0.6em; color: var(--text-muted);">: Creates, modifies, and deletes <code>/etc/demo.txt</code></span></div>
+            </div>
+            <div class="glass-card" style="padding: 10px 18px; display: flex; align-items: center; gap: 16px;">
+              <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 22px; height: 22px; font-size: 0.6em;">2</div>
+              <div><strong style="font-size: 0.65em;">Malware Download</strong> <span style="font-size: 0.6em; color: var(--text-muted);">: Downloads EICAR test file to <code>~/Downloads/eicar.com</code>; Wazuh FIM detects the new file and triggers YARA scan automatically</span></div>
+            </div>
+            <div class="glass-card" style="padding: 10px 18px; display: flex; align-items: center; gap: 16px;">
+              <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 22px; height: 22px; font-size: 0.6em;">3</div>
+              <div><strong style="font-size: 0.65em;">Brute-Force Attack</strong> <span style="font-size: 0.6em; color: var(--text-muted);">: Runs Hydra SSH brute-force with a generated password list against target</span></div>
+            </div>
+            <div class="glass-card" style="padding: 10px 18px; display: flex; align-items: center; gap: 16px;">
+              <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 22px; height: 22px; font-size: 0.6em;">4</div>
+              <div><strong style="font-size: 0.65em;">Network Reconnaissance</strong> <span style="font-size: 0.6em; color: var(--text-muted);">: Runs Nmap service scan against target IP</span></div>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Run this script once before walking through each demo slide. All simulations execute sequentially and
+            non-interactively. Malware detection fires automatically when the EICAR file lands in Downloads.
+          </aside>
+        </section>
+
+        <!-- 9.2: Wazuh-FIM Demo -->
+        <section>
+          <div class="slide-header">
+            <h2>Process 2: File Integrity Monitoring</h2>
+            <p class="subtitle-desc">Detecting unauthorized changes to critical system files</p>
+          </div>
+
+          <p style="font-size: 0.65em; margin-bottom: 0.5em;">
+            <strong>Goal:</strong> Show that Wazuh detects file changes in real time.
+          </p>
+
+          <div class="glass-card" style="padding: 20px; margin-bottom: 0.7em;">
+            <h4 style="font-size: 0.8em; margin-bottom: 0.4em;">What Happens During This Simulation</h4>
+            <p style="font-size: 0.6em; line-height: 1.8; margin: 0; color: var(--text-main);">
+              The simulation quietly connects to the target machine and makes a series of small changes to a file in a sensitive system directory. First creating it, then editing it twice, then deleting it. These are exactly the kinds of actions that could indicate an attacker modifying configuration files or planting malicious scripts. Wazuh picks up each change instantly and logs it.
+            </p>
+          </div>
+
+          <div class="grid-2col" style="gap: 15px;">
+            <div class="glass-card active-border" style="padding: 15px;">
+              <h4 style="font-size: 0.7em; margin-bottom: 0.3em;">Show in Dashboard</h4>
+              <ul style="font-size: 0.55em; line-height: 1.7; margin: 0; padding-left: 1em;">
+                <li>File path</li>
+                <li>Event type: <em>added</em>, <em>modified</em>, <em>deleted</em></li>
+                <li>Timestamp</li>
+                <li>Endpoint / agent name</li>
+              </ul>
+            </div>
+            <div class="glass-card" style="padding: 15px; background: rgba(211,115,2,0.03);">
+              <h4 style="font-size: 0.7em; margin-bottom: 0.3em; color: var(--primary-orange);">Narration Tip</h4>
+              <p style="font-size: 0.55em; line-height: 1.6; margin: 0;">
+                "Imagine an attacker who has quietly gained access to one of your servers and starts modifying configuration files. With Wazuh watching, every single change is recorded, what changed, where, and exactly when. Giving your team a clear trail to follow."
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            This is the cleanest opening demo. The action is simple and the result is easy to understand. Narration:
+            "This is useful for detecting tampering, unauthorized edits, or suspicious file activity."
+          </aside>
+        </section>
+
+        <!-- 9.3: YARA Malware Detection -->
+        <section>
+          <div class="slide-header">
+            <h2>Process 3: YARA Malware Detection</h2>
+            <p class="subtitle-desc">Wazuh detects malware the moment it lands on the endpoint</p>
+          </div>
+
+          <p style="font-size: 0.62em; margin: 0.3em 0 0.8em 0; color: var(--text-main);">
+            The simulation downloads a harmless industry-standard test file to the target machine. The moment it appears, Wazuh detects the new file and automatically runs a YARA malware scan.
+          </p>
+
+          <div class="grid-2col" style="gap: 20px; align-items: center;">
+            <!-- Mock notification popup -->
+            <div style="background: #1a1a2e; border-radius: 12px; padding: 20px 22px; font-family: monospace; color: #e0e0e0; box-shadow: 0 8px 30px rgba(0,0,0,0.35);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+                <div style="background: #fff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #1a1a2e; font-size: 0.75em; flex-shrink: 0;">W.</div>
+                <div>
+                  <div style="font-weight: 700; font-size: 0.65em; color: #fff;">Wazuh-Yara Malware Alert</div>
+                  <div style="font-size: 0.55em; color: #aaa;">Malware detected by Yara:</div>
+                </div>
+              </div>
+              <div style="font-size: 0.5em; line-height: 2; color: #ccc; padding-left: 4px;">
+                <div>File: /home/user/Downloads/eicar.com</div>
+                <div>Rules:</div>
+                <div style="padding-left: 12px; color: var(--primary-orange);">- TRELLIX_ARC_Malw_Eicar</div>
+              </div>
+              <div style="display: flex; gap: 0; margin-top: 16px; border-top: 1px solid #333;">
+                <div style="flex: 1; text-align: center; padding: 8px; font-size: 0.5em; color: #e57373; border-right: 1px solid #333; cursor: pointer;">Delete All</div>
+                <div style="flex: 1; text-align: center; padding: 8px; font-size: 0.5em; color: #aaa; border-right: 1px solid #333; cursor: pointer;">Ignore All</div>
+                <div style="flex: 1; text-align: center; padding: 8px; font-size: 0.5em; color: #aaa; cursor: pointer;">Dismiss</div>
+              </div>
+            </div>
+
+            <div class="glass-card" style="padding: 18px; background: rgba(211,115,2,0.03);">
+              <h4 style="font-size: 0.7em; margin-bottom: 0.4em; color: var(--primary-orange);">Narration Tip</h4>
+              <p style="font-size: 0.58em; line-height: 1.7; margin: 0;">
+                "The instant this file landed on the machine, Wazuh caught it. In a real scenario this could be ransomware or a trojan dropped by an attacker. The security team is notified immediately and can choose to delete it or investigate further, all from one place."
+              </p>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Malware detection is an extension of FIM. When the EICAR file lands in Downloads, Wazuh FIM detects the
+            new file and automatically triggers a YARA scan via active response. Point out the rule name
+            (TRELLIX_ARC_Malw_Eicar) and the file path in the notification to make it concrete.
+          </aside>
+        </section>
+
+        <!-- 9.4: Brute-Force Detection -->
+        <section>
+          <div class="slide-header">
+            <h2>Process 4: Brute-Force Detection</h2>
+            <p class="subtitle-desc">Simulate repeated failed SSH logins from a test machine</p>
+          </div>
+
+          <p style="font-size: 0.65em; margin-bottom: 0.5em;">
+            <strong>Prerequisites:</strong> Test endpoint with SSH enabled + separate test machine in the lab.
+          </p>
+
+          <div class="glass-card" style="padding: 15px; margin-bottom: 0.5em;">
+            <h4 style="font-size: 0.7em; margin-bottom: 0.3em;">What Happens During This Simulation</h4>
+            <p style="font-size: 0.55em; line-height: 1.8; margin: 0; color: var(--text-main);">
+              The simulation mimics a common real-world attack where someone tries to break into a server by rapidly attempting many different passwords. It fires a series of login attempts against the target machine in quick succession. All of them intentionally wrong. Wazuh doesn't just log each failed attempt individually; it recognises the pattern and raises a single correlated alert flagging it as a brute-force attack in progress.
+            </p>
+          </div>
+
+          <div class="glass-card active-border" style="padding: 15px; margin-top: 0.5em;">
+            <h4 style="font-size: 0.7em; margin-bottom: 0.3em;">Show in Dashboard</h4>
+            <ul style="font-size: 0.55em; line-height: 1.7; margin: 0; padding-left: 1em;">
+              <li>Multiple failed authentication events</li>
+              <li>Source IP of the test machine</li>
+              <li>Target endpoint hostname</li>
+              <li>Correlated brute-force alert (e.g., rule ID 5763 if available)</li>
+            </ul>
+          </div>
+
+          <aside class="notes">
+            "What you're seeing here is Wazuh recognising a pattern — not just one failed login, but many in a short window. That's the difference between someone mistyping their password and an attacker trying to force their way in. Wazuh knows the difference and alerts your team immediately."
+          </aside>
+        </section>
+
+        <!-- 9.5: Troubleshooting, Fallback & MITRE ATT&CK -->
+        <section>
+          <div class="slide-header">
+            <h2>Troubleshooting, Fallback &amp; MITRE ATT&amp;CK</h2>
+            <p class="subtitle-desc">Quick reference for common issues and the optional MITRE demo</p>
+          </div>
+
+          <div class="grid-2col" style="gap: 15px; margin-top: 0.4em;">
+            <div>
+              <div class="glass-card active-border" style="padding: 15px; margin-bottom: 0.5em;">
+                <h4 style="font-size: 0.7em; margin-bottom: 0.3em; color: var(--warning-red);">Troubleshooting</h4>
+                <div style="font-size: 0.5em; line-height: 1.7;">
+                  <p><strong>No FIM alerts?</strong> Confirm path is monitored, repeat action, refresh dashboard.</p>
+                  <p><strong>Endpoint not in dashboard?</strong> Restart agent, verify connectivity, search by hostname.</p>
+                  <p><strong>Brute-force alerts unclear?</strong> Filter by hostname, source IP, or rule ID 5763.</p>
+                  <p><strong>Hydra missing?</strong> Install before session: <code>sudo apt install hydra</code></p>
+                  <p><strong>YARA alert missing?</strong> Confirm the active response script is configured in <code>ossec.conf</code> and the Downloads directory is in the FIM monitored paths.</p>
+                </div>
+              </div>
+              <div class="glass-card" style="padding: 12px 15px; background: rgba(211,115,2,0.04);">
+                <h4 style="font-size: 0.65em; margin-bottom: 0.2em;">Fallback (Short on Time)</h4>
+                <p style="font-size: 0.5em; margin: 0;">Download the eicar malware test file. Malware scan will automatically be triggerd. Use a pre-existing alert to show MITRE ATT&amp;CK mapping without triggering a new simulation.</p>
+              </div>
+            </div>
+            <div class="glass-card" style="padding: 15px;">
+              <h4 style="font-size: 0.7em; margin-bottom: 0.4em;">Optional: MITRE ATT&amp;CK Mapping</h4>
+              <ul style="font-size: 0.55em; line-height: 1.8; margin: 0; padding-left: 1em;">
+                <li>Open any generated alert in the Wazuh dashboard</li>
+                <li>Navigate to the <strong>MITRE ATT&amp;CK</strong> tab in alert details</li>
+                <li>Point out technique ID (e.g., T1110 — Brute Force) and tactic (e.g., Credential Access)</li>
+                <li>Filter alerts by ATT&amp;CK technique across the entire estate</li>
+              </ul>
+              <div style="margin-top: 0.6em; padding: 8px 12px; background: rgba(211,115,2,0.05); border-radius: 6px;">
+                <p style="font-size: 0.5em; margin: 0; line-height: 1.6; color: var(--primary-orange);">
+                  "Every Wazuh alert is automatically mapped to MITRE ATT&amp;CK — helping teams understand not just <em>what</em> happened, but <em>how</em> the attacker operated."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="notes">
+            Use the MITRE section for technical audiences only. The safest short demo is health check + FIM + one
+            MITRE mapping from an existing alert. Troubleshoot quietly before the session starts.
+          </aside>
+        </section>
+
+            </section>
 
       <!-- Slide 10: Conclusion -->
       <section class="slide-center final-slide">
