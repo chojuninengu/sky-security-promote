@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>PROMOTE 2026 - Building Modern Cyber Defense with Wazuh</title>
+
+  <link rel="stylesheet" href="reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <!-- Global Header with Logo (Visible on all slides) -->
+    <div class="global-header">
+      <img src="skyengpro.png" alt="SkyEngPro Logo" class="global-logo">
+    </div>
+
+    <div class="slides">
+
+      <!-- Slide 1: Title Slide -->
+      <section class="slide-center title-slide">
+        <div class="logo-container">
+          <img src="skyengpro.png" alt="SkyEngPro Logo" class="logo-img">
+        </div>
+        <div class="title-badge">PROMOTE 2026</div>
+        <h1 class="glow-text">Building Modern Cyber Defense</h1>
+        <h2 class="subtitle">With the Wazuh Security Stack</h2>
+        <div class="slide-footer-simple">
+          <span>Presented by SkyEngPro</span>
+          <span class="divider">|</span>
+          <span>Security Simplified</span>
+        </div>
+      </section>
+
+      <!-- Slide 2: The Importance of Cybersecurity -->
+      <section>
+        <div class="slide-header">
+          <h2>The Modern Business Landscape</h2>
+        </div>
+        <div class="grid-2col">
+          <div class="glass-card active-border">
+            <div class="card-icon">
+              <!-- SVG Digital Infrastructure -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h3>Digital-First Operations</h3>
+            <p>Modern organizations rely entirely on digital infrastructure databases, web services, and user
+              communications. Protecting these digital assets is no longer just an IT concern; it is a fundamental
+              business priority.</p>
+          </div>
+          <div class="glass-card">
+            <div class="card-icon">
+              <!-- SVG Warning Shield -->
+              <svg viewBox="0 0 24 24" class="svg-icon warning-color">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-1-15h2v6h-2V7zm0 8h2v2h-2v-2z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h3>The Cost of Exposure</h3>
+            <p>As business systems grow more complex, security threats become more sophisticated. Without continuous
+              monitoring, a single vulnerability can disrupt business operations and compromise sensitive customer data.
+            </p>
+          </div>
+        </div>
+        <aside class="notes">
+          Welcome the audience and introduce the core message: in today's digital economy, security is a direct driver
+          of business continuity and trust.
+        </aside>
+      </section>
+
+      <!-- Slide 3: The Invisible Threat (Part 1) -->
+      <section>
+        <div class="slide-header">
+          <h2>The Challenge: The Silent Attack</h2>
+          <p class="subtitle-desc" style="font-size: 0.9em; font-style: italic; color: var(--text-muted);">"A company in
+            Yaoundé is operating normally, completely unaware..."</p>
+        </div>
+        <div class="grid-2col" style="align-items: center; gap: 40px; margin-top: 1.5em;">
+          <div class="scenario-image-container">
+            <img src="office_normal.png" alt="Yaounde Office Normal" class="scenario-image">
+          </div>
+          <div class="story-vertical">
+            <div class="story-step">
+              <span class="step-num">1</span>
+              <h4>The Hidden Trap</h4>
+              <p>An employee clicks a fake invoice link from a known supplier in Douala, unknowingly installing a silent
+                virus.</p>
+            </div>
+            <div class="story-step">
+              <span class="step-num">2</span>
+              <h4>The Silent Spread</h4>
+              <p>For weeks, hackers explore the network and steal files. Nobody suspects anything because systems work
+                normally.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          Slide 1 of the scenario. Emphasize how normal everything looks on the outside while the attack is secretly
+          spreading.
+        </aside>
+      </section>
+
+      <!-- Slide 4: The Devastating Reality (Part 2) -->
+      <section>
+        <div class="slide-header">
+          <h2>The Devastating Reality</h2>
+          <p class="subtitle-desc" style="font-size: 0.9em; font-style: italic; color: var(--warning-red);">"...until
+            they discover too late that they have been hacked."</p>
+        </div>
+        <div class="grid-2col" style="align-items: center; gap: 40px; margin-top: 1.5em;">
+          <div class="scenario-image-container"
+            style="border-color: var(--warning-red); box-shadow: 0 15px 40px rgba(229, 57, 53, 0.15);">
+            <img src="office_ransomware.png" alt="Yaounde Ransomware Attack" class="scenario-image">
+          </div>
+          <div class="story-vertical">
+            <div class="story-step active-step">
+              <span class="step-num">3</span>
+              <h4>The Blackout (Too Late)</h4>
+              <p>Suddenly, all files are locked with a red screen demanding money. Systems are down, and no one knows
+                how it started.</p>
+            </div>
+          </div>
+        </div>
+        <aside class="notes">
+          Slide 2 of the scenario. The shock factor. Introduce Wazuh on the next slide as the solution to prevent this
+          blackout.
+        </aside>
+      </section>
+
+      <!-- Slide 4: Understanding SOC and SIEM -->
+      <section>
+        <div class="slide-header">
+          <h2>Modern Cyber Defense Architecture</h2>
+        </div>
+        <p class="section-lead-text text-center">Robust defense requires two synchronized pillars: real-time analysis
+          technology and a professional response team.</p>
+        <div class="grid-2col margin-top-s">
+          <div class="glass-card definition-card">
+            <div class="card-icon">
+              <!-- SVG SIEM -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="highlight-title">SIEM</h3>
+            <p class="subtitle-desc">(Security Information & Event Management)</p>
+            <div class="metaphor-badge">The Central Technology Layer</div>
+            <p>A specialized platform that continuously aggregates, processes, and correlates event logs from across
+              your entire infrastructure to immediately flag security incidents.</p>
+          </div>
+          <div class="glass-card definition-card">
+            <div class="card-icon">
+              <!-- SVG SOC -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="highlight-title">SOC</h3>
+            <p class="subtitle-desc">(Security Operations Center)</p>
+            <div class="metaphor-badge">The Security Analyst Team</div>
+            <p>The specialized team of cybersecurity analysts who monitor the SIEM alerts 24/7, investigate suspicious
+              activities, and coordinate incident response.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Differentiate between the tool (SIEM) and the people (SOC). A SIEM without a SOC results in unaddressed
+          alerts; a SOC without a SIEM has no visibility.
+        </aside>
+      </section>
+
+      <!-- Slide 5: Introducing Wazuh -->
+      <section>
+        <div class="slide-header">
+          <h2>Introducing Wazuh</h2>
+          <p class="subtitle-desc">The Unified Security Monitoring and Threat Detection Platform</p>
+        </div>
+        <div class="grid-3col">
+          <div class="glass-card feature-item">
+            <div class="card-icon-small">
+              <!-- SVG Logs -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Log Management</h4>
+            <p class="metaphor-text">Centralized Visibility</p>
+            <p class="desc-text">Collects and archives system, application, and security logs across the enterprise.</p>
+          </div>
+          <div class="glass-card feature-item active-border">
+            <div class="card-icon-small">
+              <!-- SVG Threat Alert -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Threat Detection</h4>
+            <p class="metaphor-text">Real-Time Alerts</p>
+            <p class="desc-text">Detects intrusions, brute-force attempts, and unauthorized system access instantly.</p>
+          </div>
+          <div class="glass-card feature-item">
+            <div class="card-icon-small">
+              <!-- SVG Shield Check -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-4-4 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Vulnerability Assessment</h4>
+            <p class="metaphor-text">Proactive Hardening</p>
+            <p class="desc-text">Scans systems to locate vulnerable software, misconfigurations, and system exposure.
+            </p>
+          </div>
+        </div>
+        <div class="grid-3col margin-top-s">
+          <div class="glass-card feature-item">
+            <div class="card-icon-small">
+              <!-- SVG Eye / File Monitor -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>File Integrity Monitoring</h4>
+            <p class="metaphor-text">Configuration Guard</p>
+            <p class="desc-text">Monitors changes in system files and registry keys to flag unauthorized modifications.
+            </p>
+          </div>
+          <div class="glass-card feature-item">
+            <div class="card-icon-small">
+              <!-- SVG List Check / Compliance -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Regulatory Compliance</h4>
+            <p class="metaphor-text">Standards Audit</p>
+            <p class="desc-text">Automates compliance reporting for major standards like PCI DSS, GDPR, and HIPAA.</p>
+          </div>
+          <div class="glass-card feature-item active-border">
+            <div class="card-icon-small">
+              <!-- SVG Active Response -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Active Response</h4>
+            <p class="metaphor-text">Immediate Mitigation</p>
+            <p class="desc-text">Automatically blocks malicious IPs or isolates infected endpoints to prevent spread.
+            </p>
+          </div>
+        </div>
+        <aside class="notes">
+          Briefly touch on each feature. Highlight that Wazuh is a single agent and platform doing the job of multiple
+          security utilities.
+        </aside>
+      </section>
+
+      <!-- Slide 6: Integrating Specialized Security Tools -->
+      <section>
+        <div class="slide-header">
+          <h2>The Security Ecosystem</h2>
+          <p class="subtitle-desc">Integrating Specialized Technologies under One Command</p>
+        </div>
+        <div class="grid-4col">
+          <div class="glass-card alliance-card">
+            <h4 class="alliance-name">Suricata / Snort</h4>
+            <div class="metaphor-badge">Network Defense</div>
+            <p>Monitors network traffic, inspecting packets for signs of scan activities, exploits, and lateral movement
+              attempts.</p>
+          </div>
+          <div class="glass-card alliance-card">
+            <h4 class="alliance-name">YARA</h4>
+            <div class="metaphor-badge">Malware Analysis</div>
+            <p>Scans files and memory, identifying and classifying malicious binary files using custom, rule-based
+              matching.</p>
+          </div>
+          <div class="glass-card alliance-card">
+            <h4 class="alliance-name">Velociraptor</h4>
+            <div class="metaphor-badge">Digital Forensics</div>
+            <p>Performs deep endpoint investigation, reconstructing events and tracking down system compromises across
+              host groups.</p>
+          </div>
+          <div class="glass-card alliance-card highlight-alliance">
+            <h4 class="alliance-name">Wazuh</h4>
+            <div class="metaphor-badge accent-bg">Central Orchestration</div>
+            <p>Acts as the central correlation hub, consolidating indicators from host, network, malware, and forensic
+              engines.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Explain the integrations: Suricata/Snort provide network inspection, YARA handles file scanning, and
+          Velociraptor handles forensic investigation. Wazuh links them together.
+        </aside>
+      </section>
+
+      <!-- Slide 7: Security Ecosystem Overview -->
+      <section>
+        <div class="slide-header">
+          <h2>Security Operations Flow</h2>
+          <p class="subtitle-desc">How Data Flows from Detection to Mitigation</p>
+        </div>
+
+        <div class="flowchart-container">
+          <div class="flow-node">
+            <div class="node-title">1. Infrastructure Activity</div>
+            <div class="node-icon">
+              <!-- SVG Network -->
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <p>Endpoints(laptops, servers...) and network traffic generate data</p>
+          </div>
+
+          <div class="flow-arrow">&#10142;</div>
+
+          <div class="flow-node">
+            <div class="node-title text-orange">2. Telemetry Agents</div>
+            <div class="node-icon">
+              <!-- SVG Gate -->
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path
+                  d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-9 12H5v-2h5v2zm0-4H5v-2h5v2zm0-4H5V6h5v2zm9 12h-5v-2h5v2zm0-4h-5v-2h5v2zm0-4h-5V6h5v2z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <p>Snort, Suricata, and Wazuh agent collect logs</p>
+          </div>
+
+          <div class="flow-arrow">&#10142;</div>
+
+          <div class="flow-node highlight-node">
+            <div class="node-title">3. Wazuh correlation</div>
+            <div class="node-icon">
+              <!-- SVG Wazuh Shield -->
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="currentColor" />
+              </svg>
+            </div>
+            <p>Correlates logs and generates alerts</p>
+          </div>
+
+          <div class="flow-arrow">&#10142;</div>
+
+          <div class="flow-node">
+            <div class="node-title text-orange">4. Forensic Triage</div>
+            <div class="node-icon">
+              <!-- SVG Magnifying Glass -->
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <p>Velociraptor runs forensic queries if needed</p>
+          </div>
+
+          <div class="flow-arrow">&#10142;</div>
+
+          <div class="flow-node final-node">
+            <div class="node-title">5. SOC Remediation</div>
+            <div class="node-icon">
+              <!-- SVG Group -->
+              <svg viewBox="0 0 24 24" class="svg-icon">
+                <path
+                  d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <p>Security team resolves and closes threat</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Walk the audience through the standard operational flow of an alert: from generation, to correlation, triage,
+          and remediation by the SOC team.
+        </aside>
+      </section>
+
+      <!-- Slide 8: Why Choose Wazuh? -->
+      <section>
+        <div class="slide-header">
+          <h2>Why Choose Wazuh?</h2>
+          <p class="subtitle-desc">Delivering Maximum Value for Your Money</p>
+        </div>
+        <div class="grid-3col">
+          <div class="glass-card highlight-card">
+            <div class="card-icon-small">
+              <!-- SVG Dollar Sign -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.9c-.72.73-1.17 1.35-1.17 2.85h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7.9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Cost Optimization</h4>
+            <p>As an open-source platform, Wazuh eliminates license-per-agent structures, lowering Total Cost of
+              Ownership (TCO) and enabling security budgets to focus on operations.</p>
+          </div>
+          <div class="glass-card highlight-card active-border">
+            <div class="card-icon-small">
+              <!-- SVG Grow/Scale -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6.18-6.18 4 4L20 9.41 22.29 11.7 23 6z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Grows With Your Business</h4>
+            <p>Whether you have a single small office or multiple branches across the country, our solution easily
+              expands to protect everything smoothly and reliably.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <div class="card-icon-small">
+              <!-- SVG Tools/Flexibility -->
+              <svg viewBox="0 0 24 24" class="svg-icon accent-color">
+                <path
+                  d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.3C.5 6.7.9 9.8 2.9 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.6z"
+                  fill="currentColor" />
+              </svg>
+            </div>
+            <h4>Flexible Integration</h4>
+            <p>Connects natively with major cloud environments (AWS, Azure, GCP), firewalls, email services, and
+              messaging gateways to leverage existing systems.</p>
+          </div>
+        </div>
+        <aside class="notes">
+          Focus on the business advantages. Open source eliminates scaling costs. It protects current IT investments by
+          integrating with them, rather than replacing them.
+        </aside>
+      </section>
+      <!-- Slide 9: Demonstration Plan -->
+      <section>
+        <div class="slide-header">
+          <h2>Demonstration Plan</h2>
+          <p class="subtitle-desc">See the Wazuh Security Stack in action</p>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 0.8em; text-align: left; width: 90%; margin-left: auto; margin-right: auto;">
+          
+          <div class="glass-card active-border" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
+            <div class="step-num" style="position: static; flex-shrink: 0; width: 26px; height: 26px; font-size: 0.75em;">1</div>
+            <div>
+              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">Failed Login Attempts</h4>
+              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate multiple failed logins and alert generation.</p>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
+            <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 26px; height: 26px; font-size: 0.75em;">2</div>
+            <div>
+              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">Network Scan Detection</h4>
+              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate an Nmap scan detected by Suricata or Snort and forwarded to Wazuh.</p>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
+            <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 26px; height: 26px; font-size: 0.75em;">3</div>
+            <div>
+              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">Malware Detection</h4>
+              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate YARA detecting a suspicious file and generating an alert.</p>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
+            <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 26px; height: 26px; font-size: 0.75em;">4</div>
+            <div>
+              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">File Integrity Monitoring</h4>
+              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate detection of modifications to monitored files.</p>
+            </div>
+          </div>
+
+          <div class="glass-card" style="padding: 10px 20px; display: flex; align-items: center; gap: 20px;">
+            <div class="step-num" style="position: static; flex-shrink: 0; background: var(--bg-card); color: var(--primary-orange); border: 2px solid var(--primary-orange); width: 26px; height: 26px; font-size: 0.75em;">5</div>
+            <div>
+              <h4 style="margin: 0 0 2px 0; font-size: 0.9em; color: var(--text-dark);">Endpoint Investigation</h4>
+              <p style="margin: 0; color: var(--text-main); font-size: 0.75em;">Demonstrate Velociraptor investigating suspicious activity on an endpoint.</p>
+            </div>
+          </div>
+
+        </div>
+        
+        <aside class="notes">
+          Introduce the live demonstration segment. Briefly mention that these 5 use-cases cover the most common real-world threats that companies face.
+        </aside>
+      </section>
+
+      <!-- Slide 10: Conclusion -->
+      <section class="slide-center final-slide">
+        <div class="logo-container">
+          <img src="skyengpro.png" alt="SkyEngPro Logo" class="logo-img">
+        </div>
+        <h2 class="glow-text">Complete Cyber Defense</h2>
+        <p class="final-quote">"Effective cybersecurity is achieved through visibility, detection, investigation, and
+          response. Wazuh provides the foundation to build that capability."</p>
+
+        <div class="grid-3col summary-highlights margin-top-l">
+          <div class="summary-pill">
+            <span class="accent-number">1</span>
+            <span>100% Visibility</span>
+          </div>
+          <div class="summary-pill">
+            <span class="accent-number">2</span>
+            <span>Real-Time Actions</span>
+          </div>
+          <div class="summary-pill">
+            <span class="accent-number">3</span>
+            <span>Business Continuity</span>
+          </div>
+        </div>
+
+        <div class="contact-box margin-top-l">
+          <p>Secure Your Organization's Infrastructure</p>
+          <p class="contact-email">contact@skyengpro.com</p>
+        </div>
+        <aside class="notes">
+          Summarize the presentation. Repetitive emphasis on visibility and response. Invite them to the booth for
+          further talks and Q&A.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="reveal.js/dist/reveal.js"></script>
+  <script src="reveal.js/dist/plugin/notes.js"></script>
+  <script src="reveal.js/dist/plugin/markdown.js"></script>
+  <script src="reveal.js/dist/plugin/highlight.js"></script>
+  <script>
+    // Initialize Reveal
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      center: true,
+      slideNumber: 'c/t',
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
+</html>

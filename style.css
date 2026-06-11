@@ -1,0 +1,682 @@
+/* PROMOTE 2026 Presentation Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg-light: #f7f7f7;
+  --bg-card: rgba(255, 255, 255, 0.75);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(211, 115, 2, 0.45);
+  
+  /* Brand colors */
+  --primary-orange: #d37302;
+  --primary-orange-glow: rgba(211, 115, 2, 0.15);
+  --warning-red: #e53935;
+  --warning-red-glow: rgba(229, 57, 53, 0.12);
+  
+  /* Text colors */
+  --text-main: #22252a;
+  --text-muted: #3a3f47;
+  --text-dark: #111215;
+  
+  /* Fonts */
+  --font-headings: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base Reveal.js Customizations */
+.reveal {
+  background-color: var(--bg-light) !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-body) !important;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: var(--font-headings) !important;
+  color: var(--text-dark) !important;
+  text-transform: none !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.5em !important;
+}
+
+.reveal h1 {
+  font-size: 2.8em !important;
+  line-height: 1.1 !important;
+}
+
+.reveal h2 {
+  font-size: 1.8em !important;
+  border-bottom: none !important;
+}
+
+.reveal h3 {
+  font-size: 1.3em !important;
+  font-weight: 600 !important;
+}
+
+.reveal h4 {
+  font-size: 1.1em !important;
+  font-weight: 600 !important;
+}
+
+.reveal p {
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+/* Global Header & Logo */
+.global-header {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  z-index: 99;
+  pointer-events: none;
+  transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.global-logo {
+  height: 38px !important;
+  object-fit: contain;
+}
+
+/* Highlight & Glow Utilities */
+.glow-text {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  color: var(--text-dark) !important;
+  font-weight: 800 !important;
+}
+
+.text-orange {
+  color: var(--primary-orange) !important;
+}
+
+/* Slide Specific Layouts */
+.slide-center {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.slide-header {
+  margin-bottom: 2em !important;
+  text-align: left;
+}
+
+.slide-header h2 {
+  margin-bottom: 0.2em !important;
+}
+
+.section-lead-text {
+  font-size: 1em !important;
+  max-width: 800px;
+  margin: 0 auto 1.5em auto;
+  color: var(--text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Title Slide Styling */
+.title-slide {
+  padding-top: 1em !important;
+}
+
+.logo-container {
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  max-height: 90px !important;
+  object-fit: contain;
+}
+
+.title-badge {
+  background: var(--primary-orange);
+  color: #fff;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.5em;
+  padding: 6px 16px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 15px rgba(211, 115, 2, 0.25);
+}
+
+.subtitle {
+  font-size: 1.2em !important;
+  font-weight: 400 !important;
+  color: var(--text-muted) !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 1.5em !important;
+}
+
+.slide-footer-simple {
+  margin-top: 3em;
+  font-size: 0.55em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.slide-footer-simple .divider {
+  color: var(--primary-orange);
+  font-weight: bold;
+}
+
+/* Grid Layouts */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.margin-top-s {
+  margin-top: 1em !important;
+}
+
+.margin-top-m {
+  margin-top: 1.5em !important;
+}
+
+.margin-top-l {
+  margin-top: 2.5em !important;
+}
+
+/* Premium Light Glassmorphism Cards */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  box-shadow: 0 15px 35px var(--primary-orange-glow);
+}
+
+.glass-card.active-border {
+  border-color: var(--primary-orange);
+  box-shadow: 0 5px 20px rgba(211, 115, 2, 0.06);
+}
+
+.glass-card.active-border:hover {
+  box-shadow: 0 15px 40px var(--primary-orange-glow);
+}
+
+.glass-card h3 {
+  margin-top: 0.8em !important;
+  margin-bottom: 0.5em !important;
+  color: var(--text-dark) !important;
+}
+
+.glass-card p {
+  margin: 0 !important;
+  font-size: 0.75em !important;
+}
+
+/* Metaphor Badges */
+.metaphor-badge {
+  background: rgba(211, 115, 2, 0.06);
+  color: var(--primary-orange);
+  font-size: 0.55em;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  align-self: flex-start;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(211, 115, 2, 0.2);
+}
+
+.metaphor-badge.accent-bg {
+  background: var(--primary-orange);
+  color: #fff;
+  border: none;
+}
+
+/* SVG Icons */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.card-icon-small {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 0.8em;
+}
+
+.svg-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--text-main);
+}
+
+.card-icon-small .svg-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.svg-icon.accent-color {
+  color: var(--primary-orange);
+}
+
+.svg-icon.warning-color {
+  color: var(--warning-red);
+}
+
+/* Side-by-Side Storyboard Layout (Slide 3) */
+.scenario-image-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border: 1px solid var(--border-color);
+  transform: perspective(1000px) rotateY(2deg);
+  transition: transform 0.5s ease;
+}
+
+.scenario-image-container:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.02);
+  box-shadow: 0 20px 50px var(--primary-orange-glow);
+}
+
+.scenario-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.story-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+
+.story-step {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  text-align: left;
+}
+
+.story-step.active-step {
+  border-color: var(--warning-red);
+  box-shadow: 0 10px 30px rgba(229, 57, 53, 0.08);
+}
+
+.step-num {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  background: var(--primary-orange);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-headings);
+  font-weight: 800;
+  font-size: 0.8em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.story-step.active-step .step-num {
+  background: var(--warning-red);
+}
+
+.story-step h4 {
+  margin-top: 0.5em !important;
+  margin-bottom: 0.4em !important;
+  color: var(--text-dark) !important;
+}
+
+.story-step p {
+  margin: 0 !important;
+  font-size: 0.7em !important;
+}
+
+/* Definition Card Styling (Slide 4) */
+.definition-card {
+  padding: 35px !important;
+  border-radius: 20px !important;
+}
+
+.definition-card h3.highlight-title {
+  font-size: 2.2em !important;
+  color: var(--text-dark) !important;
+  margin-bottom: 0.1em !important;
+  margin-top: 0.4em !important;
+}
+
+.definition-card .subtitle-desc {
+  font-size: 0.65em;
+  color: var(--text-muted);
+  margin-bottom: 1.5em;
+  font-weight: 500;
+}
+
+/* Feature Item Card (Slide 5) */
+.feature-item {
+  padding: 20px !important;
+  border-radius: 12px !important;
+}
+
+.feature-item h4 {
+  margin-bottom: 0.2em !important;
+  color: var(--text-dark) !important;
+}
+
+.feature-item .metaphor-text {
+  font-size: 0.65em;
+  color: var(--primary-orange);
+  font-weight: 700;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+}
+
+.feature-item .desc-text {
+  font-size: 0.65em !important;
+  line-height: 1.5;
+}
+
+/* Alliance Card Styling (Slide 6) */
+.alliance-card {
+  padding: 20px !important;
+  border-radius: 12px !important;
+  text-align: center !important;
+}
+
+.alliance-card .metaphor-badge {
+  align-self: center;
+  font-size: 0.5em;
+  margin-bottom: 1.2em;
+}
+
+.alliance-name {
+  font-size: 1em !important;
+  margin-bottom: 0.4em !important;
+  color: var(--text-dark) !important;
+}
+
+.highlight-alliance {
+  border-color: var(--primary-orange) !important;
+  background: rgba(211, 115, 2, 0.04) !important;
+  box-shadow: 0 10px 30px rgba(211, 115, 2, 0.06) !important;
+}
+
+.highlight-alliance:hover {
+  background: rgba(211, 115, 2, 0.08) !important;
+}
+
+/* Flowchart Styling (Slide 7) */
+.flowchart-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.5em;
+  background: rgba(0, 0, 0, 0.01);
+  padding: 40px 15px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  gap: 8px;
+}
+
+.flow-node {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px 15px;
+  width: 18%;
+  min-height: 200px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flow-node.highlight-node {
+  border-color: var(--primary-orange);
+  background: rgba(211, 115, 2, 0.03);
+  box-shadow: 0 8px 25px rgba(211, 115, 2, 0.08);
+  /* Removed transform: scale to keep them completely identical in size */
+}
+
+.flow-node.final-node {
+  border-color: #2ec4b6;
+  background: rgba(46, 196, 182, 0.03);
+  box-shadow: 0 8px 25px rgba(46, 196, 182, 0.1);
+}
+
+.node-title {
+  font-family: var(--font-headings);
+  font-size: 0.85em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.node-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  color: var(--primary-orange);
+}
+
+.flow-node.highlight-node .node-icon {
+  background: var(--primary-orange);
+  color: #fff;
+}
+
+.flow-node.final-node .node-icon {
+  color: #2ec4b6;
+  background: rgba(46, 196, 182, 0.08);
+}
+
+.node-icon .svg-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.flow-node p {
+  margin: 0 !important;
+  font-size: 0.7em !important;
+  line-height: 1.4;
+  font-family: var(--font-body) !important;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.flow-arrow {
+  color: var(--primary-orange);
+  font-size: 1.5em;
+  animation: pulse-arrow 2s infinite ease-in-out;
+}
+
+@keyframes pulse-arrow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Why Wazuh highlight card (Slide 8) */
+.highlight-card {
+  padding: 30px 20px !important;
+}
+
+.highlight-card h4 {
+  font-size: 1.1em !important;
+  margin-top: 0.5em !important;
+  margin-bottom: 0.4em !important;
+  color: var(--text-dark) !important;
+}
+
+.highlight-card p {
+  font-size: 0.7em !important;
+}
+
+/* Conclusion slide (Slide 9) */
+.final-slide {
+  padding-top: 1em !important;
+}
+
+.final-quote {
+  font-size: 1.05em !important;
+  line-height: 1.6;
+  max-width: 800px;
+  font-style: italic;
+  color: var(--text-dark) !important;
+  margin: 1em auto 1.5em auto !important;
+  border-left: 3px solid var(--primary-orange);
+  padding-left: 20px;
+  text-align: left;
+}
+
+.summary-highlights {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.summary-pill {
+  background: rgba(0, 0, 0, 0.01);
+  border: 1px solid var(--border-color);
+  padding: 12px 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 0.7em;
+  color: var(--text-dark);
+}
+
+.accent-number {
+  background: var(--primary-orange);
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  box-shadow: 0 3px 8px rgba(211, 115, 2, 0.2);
+}
+
+.contact-box {
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.5em;
+  width: 100%;
+}
+
+.contact-box p {
+  margin: 0 !important;
+  font-size: 0.75em !important;
+  font-family: var(--font-headings);
+  font-weight: 600;
+}
+
+.contact-email {
+  color: var(--primary-orange) !important;
+  font-size: 1.1em !important;
+  font-weight: 800 !important;
+  margin-top: 0.2em !important;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Controls overrides for Reveal */
+.reveal .controls-arrow {
+  color: var(--primary-orange) !important;
+}
+
+.reveal .progress span {
+  background: var(--primary-orange) !important;
+}
+
+.reveal .slide-number {
+  background-color: var(--bg-card) !important;
+  color: var(--primary-orange) !important;
+  font-family: var(--font-headings);
+  font-size: 0.6em !important;
+  font-weight: 800;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important;
+  border: 1px solid var(--border-color);
+  bottom: 25px !important;
+  right: 25px !important;
+}
